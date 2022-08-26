@@ -44,3 +44,23 @@ body {
 .book p {
   margin-top: 0.5rem;
 }
+
+button {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 7rem;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: aliceblue;
+}
+
+nav {
+  background: rgba(34, 34, 34, 0.774);
+}

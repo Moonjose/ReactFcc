@@ -1,46 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import ReactDOM from 'react-dom/client';
 
-const books = [
-  {
-    id: 1,
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg',
-    title: 'I Love You to the Moon and Back',
-    author: 'Amelia Hepworth',
-  },
-  {
-    id: 2,
-    img: 'https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg',
-    title: 'Our Class is a Family',
-    author: 'Shannon Olsen',
-  },
-  {
-    id: 3,
-    img: 'https://images-na.ssl-images-amazon.com/images/I/71e5m7xQd0L._AC_UL200_SR200,200_.jpg',
-    title: 'The Vanishing Half: A Novel',
-    author: 'Brit Bennett',
-  },
-];
+import { books } from './books';
+import { Book } from './Book';
+import './index.css';
 
 function BookList() {
   return (
-    <section className='booklist'>
-      {books.map((book) => {
-        return <Book key={book.id} {...book}></Book>;
-      })}
-    </section>
+    <div>
+      <nav>
+        <h1 className='header'>Shamazon</h1>
+      </nav>
+      <section className='booklist'>
+        {books.map((book) => {
+          return <Book key={book.id} {...book}></Book>;
+        })}
+      </section>
+    </div>
   );
 }
 
-const Book = ({ img, title, author }) => {
-  return (
-    <article className='book'>
-      <img src={img} alt='' />
-      <h1>{title}</h1>
-      <h4>{author}</h4>
-    </article>
-  );
-};
-
-ReactDOM.render(<BookList />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<BookList />);
